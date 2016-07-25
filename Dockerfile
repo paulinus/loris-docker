@@ -60,6 +60,7 @@ COPY loris2.conf etc/loris2.conf
 WORKDIR /opt/loris/loris
 
 COPY debug_server.py debug_server.py
+COPY server.py server.py
 
 EXPOSE 5004
-CMD ["python", "debug_server.py"]
+CMD ["python", "server.py"]
