@@ -56,9 +56,10 @@ RUN cp -R tests/img/* /usr/local/share/images/
 
 RUN ./setup.py install 
 COPY loris2.conf etc/loris2.conf
-COPY webapp.py loris/webapp.py
 
 WORKDIR /opt/loris/loris
+
+RUN sed -i -- 's/localhost/0.0.0.0/g' webapp.py
 
 EXPOSE 5004
 CMD ["python", "webapp.py"]
