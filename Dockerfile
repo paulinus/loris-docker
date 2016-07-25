@@ -59,7 +59,7 @@ COPY loris2.conf etc/loris2.conf
 
 WORKDIR /opt/loris/loris
 
-RUN sed -i -- 's/localhost/0.0.0.0/g' webapp.py
+COPY debug_server.py debug_server.py
 
 EXPOSE 5004
-CMD ["python", "webapp.py"]
+CMD ["python", "debug_server.py"]
